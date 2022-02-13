@@ -5,7 +5,6 @@ import Calendar from '../pages/Calendar';
 export interface IRoute {
   path: string;
   component: React.ComponentType;
-  exact?: boolean;
 }
 
 export enum RouteNames {
@@ -14,9 +13,9 @@ export enum RouteNames {
 }
 
 export const publicRoutes: IRoute[] = [
-  {path: RouteNames.LOGIN, exact: true, component: Login}
+  {path: RouteNames.LOGIN, component: Login}
 ]
 
 export const privateRoutes: IRoute[] = [
-  {path: RouteNames.CALENDAR, exact: true, component: Calendar}
+  {path: RouteNames.CALENDAR, component: Calendar}
 ]

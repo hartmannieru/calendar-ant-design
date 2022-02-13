@@ -1,31 +1,30 @@
-import React from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Routes, Route, Navigate} from 'react-router-dom';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { privateRoutes, publicRoutes, RouteNames } from '../router';
 
 const AppRouter = () => {
   const { isAuth } = useTypedSelector(state => state.auth);
-  
+
   return (
     isAuth
     ?
-      <Switch>
+      <Routes>
         {
-          privateRoutes.map((route) =>
-            <Route path={route.path} exact={route.exact} component={route.component} key={route.path} />
+          privateRoutes.map(({path, component: Component}, index) => 
+            <Route path={path} element={<Component />} key={index} />
           )
         }
-        <Redirect to={RouteNames.CALENDAR} />
-      </Switch>
+        <Route path='*' element={<Navigate replace to={RouteNames.CALENDAR} />} />
+      </Routes>
     :
-      <Switch>
+      <Routes>
         {
-          publicRoutes.map((route) =>
-            <Route path={route.path} exact={route.exact} component={route.component} key={route.path} />
+          publicRoutes.map(({path, component: Component}, index) => 
+            <Route path={path} element={<Component />} key={index} />
           )
         }
-        <Redirect to={RouteNames.LOGIN} />
-      </Switch>
+        <Route path='*' element={<Navigate replace to={RouteNames.LOGIN} />} />
+      </Routes>
    
   );
 };
