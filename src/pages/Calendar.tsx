@@ -15,6 +15,7 @@ const Calendar: FC = () => {
   useEffect(() => {
     fetchGuests();
     fetchEvents(user.username);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const addNewEvent = (event: ICalendar) => {

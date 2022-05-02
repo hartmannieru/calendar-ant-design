@@ -1,7 +1,7 @@
 import {Button, DatePicker, Form, Input, Row} from 'antd';
 import {Select} from 'antd';
 import { Moment } from 'moment';
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { ICalendar } from '../models/ICalendar';
 import { IUser } from '../models/IUser';

@@ -15,6 +15,7 @@ const App:FC = () => {
       setUser({username: localStorage.getItem('username' || '')} as IUser);
       setAuth(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

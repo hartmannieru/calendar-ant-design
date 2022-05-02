@@ -1,10 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Layout, Menu, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { RouteNames } from '../router';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { AuthActionCreators } from '../store/reducers/auth/action-creators';
-import { useDispatch } from 'react-redux';
 import { useActions } from '../hooks/useActions';
 
 const Navbar: FC = () => {

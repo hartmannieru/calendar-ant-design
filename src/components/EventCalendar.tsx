@@ -1,6 +1,6 @@
 import { Calendar } from 'antd';
 import { Moment } from 'moment';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { ICalendar } from '../models/ICalendar';
 import { formatDate } from '../utils/date';
 
